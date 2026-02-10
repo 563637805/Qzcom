@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QZ 公共资源库 - 主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .top-bar {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+        .site-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            background: linear-gradient(90deg, #2d8cff, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            margin-bottom: 40px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        }
+        .hero h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #2d3436, #636e72);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .nav-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(45, 140, 255, 0.15);
+        }
+        .license-section {
+            background: white;
+            border-radius: 18px;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <div class="logo-container">
+                <img src="data/logo.png" alt="QZ Logo" class="logo">
+                <div class="site-title">QZ 公共资源库</div>
+            </div>
+            <div id="currentTime"></div>
+        </div>
+
+        <section class="hero">
+            <h1><i class="fas fa-rocket"></i> 欢迎来到 QZ 的公共资源库！</h1>
+            <p>这是一个开放、共享、协作的技术社区，汇聚创意与代码</p>
+            
+            <div class="nav-cards">
+                <div class="nav-card">
+                    <i class="fas fa-code"></i>
+                    <h3>操作系统资源</h3>
+                    <p>深入探索操作系统原理、内核开发与实践</p>
+                    <a href="Os.html" class="btn">进入探索</a>
+                </div>
+                <div class="nav-card">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>关于我们</h3>
+                    <p>了解我们的使命、愿景与核心价值观</p>
+                    <a href="about.html" class="btn">了解更多</a>
+                </div>
+                <div class="nav-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>空白页面1</h3>
+                    <p>预留的空白页面，等待您的内容</p>
+                    <a href="blank1.html" class="btn">查看</a>
+                </div>
+                <div class="nav-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>空白页面2</h3>
+                    <p>预留的空白页面，等待您的内容</p>
+                    <a href="blank2.html" class="btn">查看</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="license-section">
+            <h2><i class="fas fa-file-contract"></i> 许可证管理</h2>
+            <p>当前许可证：<span id="currentLicense">MIT License</span></p>
+            <div class="placeholder">
+                <strong>【你的许可证内容】</strong><br>
+                <textarea id="licenseText" style="width:100%; height:150px; margin-top:15px;"></textarea>
+                <button onclick="updateLicense()" style="margin-top:10px;">更新许可证</button>
+            </div>
+        </section>
+
+        <section class="hero" style="margin-top: 40px;">
+            <h2><i class="fas fa-pencil-alt"></i> 内容编辑区</h2>
+            <div class="placeholder">
+                <strong>【你的主内容 空白1】</strong><br>
+                <textarea style="width:100%; height:100px; margin-top:15px;"></textarea>
+            </div>
+            <div class="placeholder" style="margin-top: 30px;">
+                <strong>【你的主内容 空白2】</strong><br>
+                <textarea style="width:100%; height:100px; margin-top:15px;"></textarea>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 QZ 公共资源库 | (c)2026563637805 | 本页面由 GitHub Pages 驱动</p>
+        </footer>
+    </div>
+
+    <script>
+        // 动态时间显示
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('currentTime').textContent = now.toLocaleString('zh-CN');
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 许可证管理
+        function updateLicense() {
+            const newLicense = document.getElementById('licenseText').value;
+            if(newLicense.trim()) {
+                document.getElementById('currentLicense').textContent = '自定义许可证';
+                alert('许可证已更新！请将内容复制到LICENSE文件中。');
+            }
+        }
+    </script>
+</body>
+</html>

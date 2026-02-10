@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作系统资源 - QZ 公共资源库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .page-header {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        .content-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #2d8cff, #00c6ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .os-download {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="fas fa-code"></i> 操作系统资源</h1>
+            <p>深入探索操作系统原理、内核开发与实践</p>
+        </div>
+        
+        <div class="content-card">
+            <h2><i class="fas fa-download"></i> 系统下载</h2>
+            <p>我们提供的操作系统镜像文件：</p>
+            <div class="os-download">
+                <p><strong>系统版本：</strong> QZ-OS v1.0</p>
+                <p><strong>文件位置：</strong> /data/os.tar.gz</p>
+                <p><strong>大小：</strong> 约 1.2GB</p>
+                <div class="placeholder">
+                    <strong>【你的系统描述】</strong><br>
+                    <textarea style="width:100%; height:100px; margin-top:15px;"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-card">
+            <h2><i class="fas fa-book"></i> 文档资料</h2>
+            <div class="placeholder">
+                <strong>【你的文档内容】</strong><br>
+                <textarea style="width:100%; height:150px; margin-top:15px;"></textarea>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回主页
+            </a>
+        </div>
+    </div>
+</body>
+</html>
